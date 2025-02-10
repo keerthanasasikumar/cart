@@ -12,18 +12,18 @@ body{
   margin-left: 10px;
 }
 /* table content  */
-.table-row{
-  border: 2px solid seashell;
-  border-radius: 5px;
-
+.table-container{
+ display: flex;
+ flex-direction: column;
+ padding: 20px;
+ border-radius: 5px;
 }
 .container{
-  display: flex;
-  justify-content: space-evenly;
+  display: block;
+  width: 100%;
 }
 .container table {
-  width: 75%;
-  height: 150%;
+  width: 90%;
   border-collapse: separate;
   border: 1px solid grey; 
   border-spacing: 0;
@@ -106,7 +106,7 @@ img {
   color: white;
   padding: 10px 20px;
   border: none;
-  border-radius: 25px;
+  border-radius: 45px;
   cursor: pointer;
   margin-left: 10px;
 }
@@ -115,8 +115,12 @@ img {
   margin-left: 10px;
 }
 /* cart-content  */
+.cart-summary{
+  width: 90%;
+}
 .cart-summary h1{
     font-size: larger;
+    text-align: center;
 }
 .cart{
   border: 2px solid white;
@@ -125,6 +129,7 @@ img {
   padding: 10px;
   width: 100%;
   height: auto;
+
 }
 .summary-row{
   display: flex;
@@ -157,42 +162,69 @@ img {
   color: white;
   margin-top: 4px;
 }
+
 /* media query */
-@media (max-width: 768px) {
+@media (min-width: 500px) and (min-height:900px) {
+  body{
+    background-color: white;
+    margin: 0;
+  }
+  .contain{
+    margin-top: 50px;
+    font-size: x-large;
+  }
   .container th,
   .container td {
-    font-size: 12px; /* Further reduce font size on smaller screens */
-    padding: 8px; /* Further reduce padding */
+    padding: 5px;
+    font-size: 12px; 
+    padding: 10px; 
+    background-color:seashell; 
   }
-
+  .container{
+    border-collapse: collapse;
+  }
+  .container table{
+    width: 90%;
+    border-collapse: separate;
+    border: 1px solid grey; 
+    border-spacing: 0;
+    border-radius: 10px;
+    margin-left: 10px;
+  }
   img {
-    width: 40px; /* Further reduce image size */
+    width: 40px; 
     height: 40px;
   }
 
   .item-name {
-    font-size: 12px; /* Further reduce font size */
+    font-size: 12px; 
   }
 
   .item-category {
-    font-size: 0.6em; /* Further reduce font size */
+    font-size: 0.6em;
   }
   .item-quantity button,
   .item-quantity input {
-    font-size: 12px; /* Further reduce font size */
+    font-size: 12px; 
   }
 
   .summary-row {
-    font-size: 12px; /* Further reduce font size */
+    font-size: 12px; 
   }
 
   .summary-label {
-    font-size: small; /* Further reduce font size */
+    font-size: small; 
   }
 
   .summary-subtotal,
   .summary-tax,
   .summary-value {
-    font-size: 12px; /* Further reduce font size */
+    font-size: 12px; 
+}
+.cart{
+  background-color: seashell;
+}
+.cart-summary{
+  margin-top: 10px;
 }
 }
