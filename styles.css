@@ -157,4 +157,42 @@ img {
   color: white;
   margin-top: 4px;
 }
+/* media query */
+@media (max-width: 768px) {
+  .container th,
+  .container td {
+    font-size: 12px; /* Further reduce font size on smaller screens */
+    padding: 8px; /* Further reduce padding */
+  }
 
+  img {
+    width: 40px; /* Further reduce image size */
+    height: 40px;
+  }
+
+  .item-name {
+    font-size: 12px; /* Further reduce font size */
+  }
+
+  .item-category {
+    font-size: 0.6em; /* Further reduce font size */
+  }
+  .item-quantity button,
+  .item-quantity input {
+    font-size: 12px; /* Further reduce font size */
+  }
+
+  .summary-row {
+    font-size: 12px; /* Further reduce font size */
+  }
+
+  .summary-label {
+    font-size: small; /* Further reduce font size */
+  }
+
+  .summary-subtotal,
+  .summary-tax,
+  .summary-value {
+    font-size: 12px; /* Further reduce font size */
+}
+}
