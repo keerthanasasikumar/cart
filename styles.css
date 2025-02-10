@@ -170,21 +170,23 @@ img {
     margin: 0;
   }
   .contain{
-    margin-top: 50px;
+    margin-top: 100px;
     font-size: x-large;
   }
   .container th,
   .container td {
-    padding: 5px;
-    font-size: 12px; 
-    padding: 10px; 
+    padding: 30px;
+    font-size: x-large;  
     background-color:seashell; 
+  }
+  .table-container{
+    margin-top: 100px;
   }
   .container{
     border-collapse: collapse;
   }
   .container table{
-    width: 90%;
+    width: 100%;
     border-collapse: separate;
     border: 1px solid grey; 
     border-spacing: 0;
@@ -197,7 +199,7 @@ img {
   }
 
   .item-name {
-    font-size: 12px; 
+    font-size: x-large; 
   }
 
   .item-category {
@@ -205,26 +207,43 @@ img {
   }
   .item-quantity button,
   .item-quantity input {
-    font-size: 12px; 
+    font-size: x-large; 
   }
-
+  .cart-summary h1{
+    font-size: x-large;
+  }
+  .cart{
+    border: 2px solid white;
+    background-color: seashell;
+    border-radius: 10px;
+    padding: 10px;
+    width: 100%;
+    height: auto;
+  }
   .summary-row {
-    font-size: 12px; 
+    font-size: x-large; 
   }
 
   .summary-label {
-    font-size: small; 
+    font-size: x-large; 
   }
 
   .summary-subtotal,
   .summary-tax,
   .summary-value {
-    font-size: 12px; 
+    font-size:x-large; 
 }
 .cart{
   background-color: seashell;
 }
 .cart-summary{
   margin-top: 10px;
+}
+.checkout-button{
+  font-size: large;
+  border-radius: 5px;
+}
+.coupon-code{
+  font-size: large;
 }
 }
