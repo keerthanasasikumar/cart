@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+  <link rel="stylesheet" href="styles.css">
+<body>
+ <div class="contain">
+  <h1>SHOPPING CART</h1>
+ </div>
+ <!-- table-content  -->
+<div class="table-container">
+  <div class="container">
+ <table>
+  <thead>
+      <tr>
+          <th>Product Name</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Sub Total</th>
+          <th></th> </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>
+              <img src="images/diamonds.webp" alt="Product Image">
+              <div class="item-details">
+                  <div class="item-name">Couple's Ring</div>
+                  <div class="item-category">Category</div>
+              </div>
+          </td>
+          <td class="item-price">$25.00</td>
+          <td>
+              <div class="item-quantity">
+                  <button class="minus">-</button>
+                  <input type="text" value="2">
+                  <button  class="plus">+</button>
+              </div>
+          </td>
+          <td class="item-subtotal">$50.00</td>
+          <td class="item-remove">X</td>
+      </tr>
+      <tr>
+          <td>
+              <img src="images/chain.webp" alt="Product Image">
+              <div class="item-details">
+                  <div class="item-name">Golden Chain </div>
+                  <div class="item-category">Category</div>
+              </div>
+          </td>
+          <td class="item-price">$25.00</td>
+          <td>
+            <div class="item-quantity">
+                <button class="minus">-</button>
+                <input type="text" value="3">
+                <button  class="plus">+</button>
+            </div>
+        </td>
+        <td class="item-subtotal">$75.00</td>
+        <td class="item-remove">X</td>
+    </tr>
+</tbody>
+</table>
+<!-- cart total  -->
+<div class="cart-summary">
+    <h1>CART TOTAL</h1>
+<div class="cart">
+<div class="summary-row">
+    <div class="summary-label"><h1>Sub Total</h1></div>
+    <div class="summary-subtotal"><h1>$125.00</h1></div>
+</div>
+<div class="summary-row">
+    <div class="summary-label"><h1>Tax</h1></div>
+    <div class="summary-tax"><h1>$12.50</h1></div>
+</div>
+<div class="summary-row">
+    <div class="summary-label"><h1>Delivery</h1></div>
+    <div class="summary-value"><h1>$10.00</h1></div>
+</div>
+</div>
+<div class="summary-row">
+    <div class="summary-label">Total</div>
+    <div class="summary-total">$147.50</div>
+</div>
+<button class="checkout-button">Proceed To Checkout</button>
+</div>
+</div>
+<!-- coupon  -->
+<div class="coupon-code">
+  <input type="text" placeholder="Coupon Code">
+  <button>Redeem</button>
+  <h1> Update Cart</h1>
+</div>
+</div>
+
+ <!-- <div class="cart-summary">
+  <div class="summary-row">
+      <div class="summary-label">Sub Total</div>
+      <div class="summary-value">$125.00</div>
+  </div>
+  <div class="summary-row">
+      <div class="summary-label">Tax</div>
+      <div class="summary-value">$12.50</div>
+  </div>
+  <div class="summary-row">
+      <div class="summary-label">Delivery</div>
+      <div class="summary-value">$10.00</div>
+  </div>
+  <div class="summary-row">
+      <div class="summary-label">Total</div>
+      <div class="summary-value">$147.50</div>
+  </div>
+  <button class="checkout-button">Proceed To Checkout</button>
+</div>
+ </div>
+</div> -->
+
+<!-- <div class="cart-container">
+  <div class="cart-items">
+      <div class="cart-item">
+          <img src="placeholder.png" alt="Product Image">
+          <div class="item-details">
+              <div class="item-name">Name of the Product</div>
+              <div class="item-category">Category</div>
+          </div>
+          <div class="item-price">$25.00</div>
+          <div class="item-quantity">
+              <button>-</button>
+              <input type="text" value="2">
+              <button>+</button>
+          </div>
+          <div class="item-remove">X</div>
+      </div>
+      <div class="cart-item">
+          <img src="placeholder.png" alt="Product Image">
+          <div class="item-details">
+              <div class="item-name">Name of the Product</div>
+              <div class="item-category">Category</div>
+          </div>
+          <div class="item-price">$25.00</div>
+          <div class="item-quantity">
+              <button>-</:button>
+              <input type="text" value="3">
+              <button>+</button>
+          </div>
+          <div class="item-remove">X</div>
+      </div>
+  </div>
+
+  <div class="cart-summary">
+    <div class="summary-details">
+        <div class="summary-row">
+            <div class="summary-label">Sub Total</div>
+            <div class="summary-value">$100.00</div>
+        </div>
+        <div class="summary-row">
+            <div class="summary-label">Tax</div>
+            <div class="summary-value">$10.00</div>
+        </div>
+        <div class="summary-row">
+            <div class="summary-label">Delivery</div>
+            <div class="summary-value">$10.00</div>
+        </div>
+        <div class="summary-row">
+            <div class="summary-label">Total</div>
+            <div class="summary-value">$250.00</div>
+        </div>
+        <button class="checkout-button">Proceed To Checkout</button>
+    </div>
+</div>
+<div class="coupon-code">
+    <input type="text" placeholder="Coupon Code">
+    <button>Redeem</button>
+</div>
+</div> -->
+
+<script src="script.js">
+
+</script>
+
+</body>
+</html>
