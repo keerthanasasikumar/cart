@@ -1,52 +1,37 @@
-function updateQuantity(row, change) {
-  const quantityInput = row.querySelector('.item-quantity input');
-  let quantity = parseInt(quantityInput.value);
+document.addEventListener("DOMContentLoaded", function () {
+    const updateCart = () => {
+        let subtotal = 0;
+        document.querySelectorAll(".cart-item").forEach(item => {
+            let price = parseFloat(item.querySelector(".price").innerText.replace("$", ""));
+            let quantity = parseInt(item.querySelector(".quantity").value);
+            let subTotal = price * quantity;
+            item.querySelector(".subtotal").innerText = `$${subTotal.toFixed(2)}`;
+            subtotal += subTotal;
+        });
 
-  quantity += change;
+        let tax = 10.00;
+        let delivery = 10.00;
+        let total = subtotal + tax + delivery;
 
-  if (quantity < 1) {
-      quantity = 1; 
-  }
+        document.getElementById("subtotal").innerText = `$${subtotal.toFixed(2)}`;
+        document.getElementById("total").innerText = `$${total.toFixed(2)}`;
+    };
 
-  quantityInput.value = quantity;
+    document.querySelectorAll(".increase, .decrease").forEach(button => {
+        button.addEventListener("click", function () {
+            let input = this.parentElement.querySelector(".quantity");
+            let value = parseInt(input.value);
+            input.value = this.classList.contains("increase") ? value + 1 : Math.max(value - 1, 1);
+            updateCart();
+        });
+    });
 
-  // Update subtotal (you'll need to calculate this dynamically)
-  updateSubtotal(row, quantity);
+    document.querySelectorAll(".remove").forEach(button => {
+        button.addEventListener("click", function () {
+            this.closest(".cart-item").remove();
+            updateCart();
+        });
+    });
 
-  // Update cart total (you'll need to implement this logic)
-  updateCartTotal();
-}
-
-function updateSubtotal(row, quantity) {
-  const price = parseFloat(row.querySelector('.item-price').textContent.replace('$', ''));
-  const subtotal = price * quantity;
-  row.querySelector('.item-subtotal').textContent = '$' + subtotal.toFixed(2); 
-}
-
-function updateCartTotal() {
-  let cartTotal = 0;
-  const items = document.querySelectorAll('tbody tr'); 
-  items.forEach(item => {
-      const subtotalText = item.querySelector('.item-subtotal').textContent.replace('$', '');
-      cartTotal += parseFloat(subtotalText);
-  });
-  const tax = cartTotal * 0.1; 
-  const delivery = 10;
-  const total = cartTotal + tax + delivery;
-
-  document.querySelector('.summary-subtotal').textContent = '$' + cartTotal.toFixed(2);
-  document.querySelector('.summary-tax').textContent = '$' + tax.toFixed(2);
-  document.querySelector('.summary-total').textContent = '$' + total.toFixed(2);
-}
-window.addEventListener('DOMContentLoaded', () => {
-  updateCartTotal(); 
-  const rows = document.querySelectorAll('tbody tr');
-  rows.forEach(row => {
-      const plusButton = row.querySelector('.item-quantity .plus');
-      const minusButton = row.querySelector('.item-quantity .minus');
-
-      plusButton.addEventListener('click', () => updateQuantity(row, 1));
-      minusButton.addEventListener('click', () => updateQuantity(row, -1));
-  });
+    updateCart();
 });
-
