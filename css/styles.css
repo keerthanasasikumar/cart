@@ -122,7 +122,6 @@ button {
   color: black;
   text-decoration: underline;
 }
-
 /* Responsive Styling */
 @media (max-width: 992px) {  /* Tablet View */
   .cart-container {
@@ -180,6 +179,7 @@ button {
       padding: 8px;
       font-size: 14px;
   }
+ 
 }
 
 @media (max-width: 576px) {  /* Mobile View */

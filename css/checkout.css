@@ -1,0 +1,212 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #d8e4d6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 10px;
+}
+
+.container {
+  display: flex;
+  width: 800px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* Flex container for larger screens */
+.review-pay, .payment {
+  padding: 30px;
+  flex: 1;
+}
+
+.review-pay {
+  background: #f9f9f9;
+}
+.review-pay p{
+  padding: 5px;
+}
+/* Product Item */
+.item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.item img {
+  width: 50px;
+  height: 50px;
+  border-radius: 6px;
+  margin-right: 10px;
+}
+
+.color {
+  color: #555;
+  font-size: 14px;
+}
+
+.price {
+  font-weight: bold;
+  margin-top: 5px;
+  padding: 10px;
+}
+
+/* Discount Code Input */
+.discount {
+  display: flex;
+  margin-top: 10px;
+  padding: 10px;
+}
+
+.discount input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.discount button {
+  background: palevioletred;
+  color: white;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  margin-left: 5px;
+  border-radius: 4px;
+}
+
+h3 {
+  margin-top: 10px;
+  color: palevioletred;
+  font-weight: bold;
+}
+
+/* Payment Section */
+.payment {
+  background: palevioletred;
+  color: white;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.payment input {
+  width: 100%;
+  padding: 8px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 4px;
+}
+
+.payment-options {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+.payment-options button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  background: #ccc;
+  color: #333;
+}
+
+.payment-options button.active {
+  background: white;
+  color: black;
+  font-weight: bold;
+}
+
+/* Card Details */
+.card-info {
+  display: flex;
+  gap: 10px;
+}
+
+.submit-btn {
+  background: #f4f4f4;
+  color: palevioletred;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 10px;
+  border-radius: 4px;
+}
+
+/* --------------------------- */
+/* RESPONSIVE DESIGN */
+/* --------------------------- */
+
+/* For Tablets (768px and below) */
+@media screen and (max-width: 768px) {
+  .container {
+      flex-direction: column;
+      width: 90%;
+  }
+
+  .review-pay, .payment {
+      padding: 15px;
+  }
+
+  .payment {
+      border-radius: 0 0 12px 12px;
+  }
+
+  .item {
+      flex-direction: row;
+      justify-content: space-between;
+  }
+}
+
+/* For Mobile (480px and below) */
+@media screen and (max-width: 480px) {
+  body {
+      height: auto;
+      padding: 10px;
+  }
+
+  .container {
+      flex-direction: column;
+      width: 100%;
+  }
+
+  .review-pay, .payment {
+      padding: 15px;
+  }
+
+  .item {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .discount {
+      flex-direction: column;
+  }
+
+  .discount input {
+      width: 100%;
+      margin-bottom: 5px;
+  }
+
+  .payment-options {
+      flex-direction: column;
+  }
+
+  .card-info {
+      flex-direction: column;
+  }
+}

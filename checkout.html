@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Checkout</title>
+    <link rel="stylesheet" href="css/checkout.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Review and Pay Section -->
+        <div class="review-pay">
+            <h2>Review and Pay</h2>
+            <div class="item">
+                <img src="images/diamonds.webp" alt="Lipstick">
+                <div>
+                    <p>Couple's Ring</p>
+                    <p class="price">$25.00</p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="images/chain.webp" alt="Lipstick">
+                <div>
+                    <p>Golden Chain</p>
+                    <p class="price">$25.00</p>
+                </div>
+            </div>
+            <div class="discount">
+                <input type="text" placeholder="Discount code">
+                <button>Apply</button>
+            </div>
+            <hr>
+            <p>Subtotal (2 items): <span>$100.00</span></p>
+            <p>Shipping: <span>$15.00</span></p>
+            <h3>Total: $115.00</h3>
+        </div>
+
+        <!-- Payment Section -->
+        <div class="payment">
+            <h2>Select Payment Method</h2>
+            <input type="email" placeholder="Email Address*" required>
+            <input type="tel" placeholder="Mobile Number*" required>
+
+            <div class="payment-options">
+                <button class="active" onclick="selectPayment('card')">Card</button>
+                <button onclick="selectPayment('online')">Online Banking</button>
+                <button onclick="selectPayment('wallet')">Cash on Delivery</button>
+            </div>
+
+            <div id="card-details">
+                <input type="text" placeholder="Card Number*" required>
+                <div class="card-info">
+                    <input type="text" placeholder="Expiry Date (MM/YY)*" required>
+                    <input type="text" placeholder="CVV*" required>
+                </div>
+            </div>
+
+            <button class="submit-btn">Submit</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -34,4 +34,21 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     updateCart();
-});
+}); 
+// checkout
+function proceedToCheckout(){
+    window.location.href="checkout.html"
+}
+function selectPayment(method) {
+    const buttons = document.querySelectorAll('.payment-options button');
+    buttons.forEach(btn => btn.classList.remove('active'));
+
+    if (method === 'card') {
+        document.getElementById('card-details').style.display = 'block';
+    } else {
+        document.getElementById('card-details').style.display = 'none';
+    }
+
+    event.target.classList.add('active');
+}
+
