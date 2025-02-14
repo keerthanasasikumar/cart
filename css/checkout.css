@@ -1,217 +1,268 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
-}
-
+/* General Styles */
 body {
-  background-color: #d8e4d6;
+  font-family: Arial, sans-serif;
+  background-color: #d0d8ff;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  padding: 10px;
 }
 
+/* Form Container */
 .container {
+  background: #fff;
+  padding: 20px;
+  width: 400px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Progress Bar */
+.progress-bar {
   display: flex;
-  width: 800px;
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
 }
 
-/* Flex container for larger screens */
-.review-pay, .payment {
-  padding: 30px;
-  flex: 1;
+.step {
+  width: 35px;
+  height: 35px;
+  background: #ccc;
+  color: white;
+  text-align: center;
+  line-height: 35px;
+  border-radius: 50%;
+  font-weight: bold;
 }
 
-.review-pay {
-  background: #f9f9f9;
-}
-.review-pay p{
-  padding: 5px;
-}
-/* Product Item */
-.item {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-  padding: 10px;
+.step.active {
+  background:#D63384;
 }
 
-.item img {
-  width: 50px;
-  height: 50px;
-  border-radius: 6px;
-  margin-right: 10px;
+/* Form Steps */
+.form-step {
+  display: none;
 }
 
-.color {
-  color: #555;
+.form-step.active {
+  display: block;
+}
+
+/* Form Inputs */
+input, select, textarea {
+  width: 90%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+label{
+  display: block;
+  margin: 10px 0 5px;
+  font-weight: bold;
   font-size: 14px;
 }
 
-.price {
-  font-weight: bold;
-  margin-top: 5px;
-  padding: 10px;
-}
-
-/* Discount Code Input */
-.discount {
+/* Buttons */
+.buttons{
   display: flex;
-  margin-top: 10px;
-  padding: 10px;
+  justify-content: space-around;
 }
-
-.discount input {
-  flex: 1;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-.discount button {
-  background:  rgb(218, 107, 144);
-  color: white;
+.styled-wrapper .button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 56px;
+  height: 56px;
   border: none;
-  padding: 8px;
+  border-radius: 50%;
+  background-color: transparent;
   cursor: pointer;
-  margin-left: 5px;
-  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+  outline: none;
 }
 
-h3 {
-  margin-top: 10px;
-  color:  rgb(218, 107, 144);
-  font-weight: bold;
+.styled-wrapper .button:before {
+  content: "";
+  position: absolute;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 3px solid black; 
+  transition: opacity 0.4s ease, transform 0.5s ease;
 }
 
-/* Payment Section */
-.payment {
-  background: rgb(218, 107, 144);
-  color: white;
-  border-top-right-radius: 12px;
-  border-bottom-right-radius: 12px;
+.styled-wrapper .button:after {
+  content: "";
+  position: absolute;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 4px solid #D63384;
+  transform: scale(1.3);
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 0.5s ease;
 }
 
-.payment input {
+.styled-wrapper .button:hover:before,
+.styled-wrapper .button:focus:before {
+  opacity: 0;
+  transform: scale(0.7);
+  transition:
+    opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+    transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.styled-wrapper .button:hover:after,
+.styled-wrapper .button:focus:after {
+  opacity: 1;
+  transform: scale(1);
+  transition:
+    opacity 0.4s cubic-bezier(0.77, 0, 0.175, 1) 80ms,
+    transform 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 80ms;
+}
+
+.styled-wrapper .button-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transition: transform 0.4s ease;
+}
+
+.styled-wrapper .button-elem {
+  display: block;
+  align-items: center;
+  transform: rotate(360deg);
+  fill:black;
+}
+
+.styled-wrapper .button:hover .button-box,
+.styled-wrapper .button:focus .button-box
+{
+  transition: 0.4s;
+  transform: translateX(-69px);
+}
+/* prev  */
+
+.styled-wrapper .prev-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 56px;
+  height: 56px;
+  border: none;
+  border-radius: 50%;
+  background-color: transparent;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  outline: none;
+}
+
+.styled-wrapper .prev-btn:before {
+  content: "";
+  position: absolute;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 3px solid black; 
+  transition: opacity 0.4s ease, transform 0.5s ease;
+}
+
+.styled-wrapper .prev-btn:after {
+  content: "";
+  position: absolute;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 4px solid #D63384;
+  transform: scale(1.3);
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 0.5s ease;
+}
+
+.styled-wrapper .prev-btn:hover:before,
+.styled-wrapper .prev-btn:focus:before {
+  opacity: 0;
+  transform: scale(0.7);
+  transition:
+    opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+    transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.styled-wrapper .prev-btn:hover:after,
+.styled-wrapper .prev-btn:focus:after {
+  opacity: 1;
+  transform: scale(1);
+  transition:
+    opacity 0.4s cubic-bezier(0.77, 0, 0.175, 1) 80ms,
+    transform 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 80ms;
+}
+
+.styled-wrapper .button-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transition: transform 0.4s ease;
+}
+
+.styled-wrapper .button-elem {
+  display: block;
+  align-items: center;
+  transform: rotate(360deg);
+  fill:black;
+}
+
+.styled-wrapper .prev-btn:hover .button-box,
+.styled-wrapper .prev-btn:focus .button-box
+{
+  transition: 0.4s;
+  transform: translateX(-69px);
+}
+/* submit  */
+.button-submit{
+  outline: none;
+  cursor: pointer;
+  border: none;
+  padding: 0.9rem 2rem;
+  margin: 0;
+  position: relative;
+  display: inline-block;
+  letter-spacing: 0.05rem;
+  border-radius: 500px;
+  overflow: hidden;
+  background: #D63384;
+  color: ghostwhite;
+}
+.button-submit span{
+ position: relative;
+ z-index: 10;
+ transition: color 0.4s;
+}
+.button-submit:hover span{
+  color: black;
+}
+.button-submit::before,
+.button-submit::after{
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  padding: 8px;
-  margin: 10px 0;
-  border: none;
-  border-radius: 4px;
+  height: 100%;
+  z-index: 0;
 }
-
-.payment-options {
-  display: flex;
-  gap: 5px;
-  margin-bottom: 10px;
+.button-submit::before{
+  content: "";
+  background: #000;
+  width: 120%;
+  left: -10%;
+  transform: skew(30deg);
+  transition: 0.4s cubic-bezier(0.3,1,0.8,1);
 }
-
-.payment-options button {
-  flex: 1;
-  padding: 10px;
-  border: none;
-  cursor: pointer;
-  border-radius: 4px;
-  background: #ccc;
-  color: #333;
-}
-
-.payment-options button.active {
-  background: white;
-  color:black;
-  font-weight: bold;
-}
-
-/* Card Details */
-.card-info {
-  display: flex;
-  gap: 10px;
-}
-
-.submit-btn {
-  background: white;
-  color: black ;
-  border: none;
-  padding: 10px;
-  width: 100%;
-  cursor: pointer;
-  font-weight: bold;
-  margin-top: 10px;
-  border-radius: 10px;
-  border: 2px solid grey;
-}
-.submit-btn:active{
-  box-shadow: 0 5px rgb(218, 107, 144);
-  transform: scale(0.85);
-}
-
-/* --------------------------- */
-/* RESPONSIVE DESIGN */
-/* --------------------------- */
-
-/* For Tablets (768px and below) */
-@media screen and (max-width: 768px) {
-  .container {
-      flex-direction: column;
-      width: 90%;
-  }
-
-  .review-pay, .payment {
-      padding: 15px;
-  }
-
-  .payment {
-      border-radius: 0 0 12px 12px;
-  }
-
-  .item {
-      flex-direction: row;
-      justify-content: space-between;
-  }
-}
-
-/* For Mobile (480px and below) */
-@media screen and (max-width: 480px) {
-  body {
-      height: auto;
-      padding: 10px;
-  }
-
-  .container {
-      flex-direction: column;
-      width: 100%;
-  }
-
-  .review-pay, .payment {
-      padding: 15px;
-  }
-
-  .item {
-      flex-direction: column;
-      text-align: center;
-  }
-
-  .discount {
-      flex-direction: column;
-  }
-
-  .discount input {
-      width: 100%;
-      margin-bottom: 5px;
-  }
-
-  .payment-options {
-      flex-direction: column;
-  }
-
-  .card-info {
-      flex-direction: column;
-  }
+.button-submit:hover::before{
+  transform: translate3d(100%,0,0);
 }

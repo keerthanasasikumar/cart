@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delivery Submitted</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #d0d8ff;
+            padding: 50px;
+            animation: fadeInBackground 2s ease-in-out;
+        }
+
+        @keyframes fadeInBackground {
+            0% { background-color: #a0b4ff; }
+            100% { background-color: #d0d8ff; }
+        }
+
+        .success {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
+            opacity: 0;
+            transform: scale(0.8);
+            animation: fadeInScale 1s ease-in-out forwards, bounce 1.5s ease-in-out 1s;
+        }
+
+        @keyframes fadeInScale {
+            0% { opacity: 0; transform: scale(0.8); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        h2 {
+            color: #28a745;
+            font-size: 24px;
+        }
+
+        p {
+            color: #333;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="success">
+        <h2>✅ Delivery Submitted Successfully!</h2>
+        <p>Thank you for your order. We will process your delivery soon.</p>
+    </div>
+</body>
+</html>
