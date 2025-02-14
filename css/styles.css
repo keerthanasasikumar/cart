@@ -1,14 +1,22 @@
 body {
-  font-family: Arial, sans-serif;
+  /* font-family: Arial, sans-serif;
   margin: 20px;
   padding: 0;
-  background-color: #d0d8ff;
+  background-color: #ffd0ed; */
+  background:rgba( 255, 255, 255, 0.18 )  ;
+box-shadow: 0 8px 32px 0 #ffd0ed;
+backdrop-filter: blur( 8.5px );
+-webkit-backdrop-filter: blur( 8.5px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 ) ;
+margin-top: 25px;
 }
 
 .title {
   color: #D63384;
   font-size: 24px;
   font-weight: bold;
+  margin-left: 10px;
 }
 
 .cart-container {
@@ -175,6 +183,7 @@ button .remove:hover{
 .coupon-section {
   margin-top: 20px;
   display: flex;
+  margin-bottom: 5px;
 }
 .redeem {
   background:linear-gradient(90deg, #D63384, #d65db1);

@@ -1,11 +1,12 @@
 /* General Styles */
 body {
   font-family: Arial, sans-serif;
-  background-color: #d0d8ff;
+  background-color:#ffd0ed;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+
 }
 
 /* Form Container */
@@ -13,8 +14,11 @@ body {
   background: #fff;
   padding: 20px;
   width: 400px;
+  box-shadow: 0 8px 32px 0 #D63384;
+  backdrop-filter: blur( 9.5px );
+  -webkit-backdrop-filter: blur( 9.5px );
   border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
 /* Progress Bar */

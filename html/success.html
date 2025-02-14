@@ -8,14 +8,19 @@
         body {
             text-align: center;
             font-family: Arial, sans-serif;
-            background-color: #d0d8ff;
             padding: 50px;
             animation: fadeInBackground 2s ease-in-out;
+            background:rgba( 255, 255, 255, 0.18 )  ;
+            box-shadow: 0 8px 32px 0 #ffd0ed;
+            backdrop-filter: blur( 8.5px );
+            -webkit-backdrop-filter: blur( 8.5px );
+            border-radius: 10px;
+            border: 1px solid rgba( 255, 255, 255, 0.18 ) ;
         }
 
         @keyframes fadeInBackground {
-            0% { background-color: #a0b4ff; }
-            100% { background-color: #d0d8ff; }
+            0% { background-color: #ffd0ed; }
+            100% { background-color:#ffd0ed; }
         }
 
         .success {
