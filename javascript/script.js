@@ -36,6 +36,8 @@ document.addEventListener("DOMContentLoaded", function () {
     updateCart();
 }); 
 // checkout
-function proceedToCheckout(){
-    window.location.href="html/checkout.html"
-  }
+function proceedToCheckout() {
+    console.log("Redirecting to checkout...");
+    window.location.href = "html/checkout.html";
+}
+
