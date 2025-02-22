@@ -1,23 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Payment</title>
+        <title>CheckOut</title>
         <link rel="stylesheet" href="../css/checkout.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     </head>
-        <body>
 
-            <div class="container">
-                <div class="progress-bar">
-                    <div class="step active"><i class="fa-solid fa-person"></i></div>
-                    <div class="step"><i class="fa-solid fa-truck"></i></div>
-                    <div class="step"><i class="fa-solid fa-cart-plus"></i></div>
-                </div>
+    <body>
 
+       
+
+        <div class="content">
+
+        <div class="container">
+
+
+            <stepper class="progress-bar">
+                <div class="step active">Personal Information<i class="fa-solid fa-person"></i></div>
+                <div class="step">Address<i class="fa-solid fa-truck"></i></div>
+                <div class="step">Order<i class="fa-solid fa-cart-plus"></i></div>
+            </stepper>
+
+            
+            <div class="form-container">
                 <form id="multiStepForm">
-                    <!-- Step 1: Personal Information -->
+                    
                     <div class="form-step active">
                         <h2>Personal Information</h2>
                         <label>First Name</label>
@@ -32,11 +39,11 @@
                         <label>Phone Number</label>
                         <input type="tel" id="phone" required>
 
-                        <!-- <button type="button" class="next-btn" id="nextBtn"><i class="fa-solid fa-arrow-right"></i></button> -->
+                        
                     <div class="styled-wrapper">
                         <button class="button" type="button" id="nextBtn">
                         <div class="button-box">
-                            <span class="button-elem">
+                            <span class="button-elem"> Next
                                 <i class="fa-solid fa-arrow-right"></i>
                             </span>
                         </div>
@@ -45,7 +52,7 @@
             
                     </div>
 
-                    <!-- Step 2: Delivery Address -->
+                    
                     <div class="form-step">
                         <h2>Delivery Address</h2>
                         <label>Address</label>
@@ -65,22 +72,24 @@
                         <label>Zipcode</label>
                         <input type="text" id="zipcode" required>
 
-                        <!-- <button type="button" class="prev-btn">Back</button> -->
+                       
                         <div class="buttons">
                         <div class="styled-wrapper">
                             <button class="prev-btn" type="button" id="nextBtn">
                             <div class="button-box">
                                 <span class="button-elem">
+                                    Back
                                     <i class="fa-solid fa-arrow-left"></i>
                                 </span>
                             </div>
                             </button>
                         </div>
-                        <!-- <button type="button" class="next-btn">Next</button> -->
+                       
                         <div class="styled-wrapper">
                             <button class="button" type="button" id="nextBtn">
                             <div class="button-box">
                                 <span class="button-elem">
+                                    Next
                                     <i class="fa-solid fa-arrow-right"></i>
                                 </span>
                             </div>
@@ -90,7 +99,7 @@
 
                     </div>
 
-                    <!-- Step 3: Order Details -->
+                    
                     <div class="form-step">
                         <h2>Order Details</h2>
                         <label>Description</label>
@@ -103,12 +112,13 @@
                             <option value="Cash on Delivery">Cash on Delivery</option>
                         </select>
 
-                        <!-- <button type="button" class="prev-btn">Back</button> -->
+
                          <div class="buttons">
                         <div class="styled-wrapper">
                             <button class="prev-btn" type="button" id="nextBtn">
                             <div class="button-box">
                                 <span class="button-elem">
+                                    Back
                                     <i class="fa-solid fa-arrow-left"></i>
                                 </span>
                             </div>
@@ -119,7 +129,17 @@
                     </div>
                     </div>
                 </form>
+
+                <img src="../images/hands.jpg">
+
             </div>
-            <script src="../javascript/checkout.js"></script>
+        </div>
+
+    </div>
+
+    
+    <script src="../javascript/checkout.js"></script>
+
     </body>
-    </html>
+
+</html>

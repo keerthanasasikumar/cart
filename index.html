@@ -9,6 +9,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     />
+    <link href="/your-path-to-uicons/css/uicons-css/styles.css" rel="stylesheet"> 
 </head>
 <body>
     <header>
@@ -41,11 +42,11 @@
         </div>
 
         <div class="product-info">
-            <h1>Dazzling Hearts Gold Drop Earrings</h1>
+            <h2>Dazzling Hearts Gold Drop Earrings</h2>
             <p class="description">
                 Turn heads with these 22 Karat yellow gold heart Drop Earrings. Their sleek design, adorned with heart motifs.
             </p><hr>
-            <p class="price"><span class="old-price">$400</span> <span class="new-price">$250</span></p>
+            <p class="price"><span class="old-price">$400</span> <span class="new-price" style="position: absolute;">$250</span></p><br>
             <p class="rating">⭐ ⭐ ⭐ ⭐ ⭐ 4.7 Reviews</p>
             <div class="buttons">
                 <button class="buy-btn" onclick="buyNow()">Buy Now</button>
@@ -54,30 +55,48 @@
             
             <div class="box">
             <div class="guarantee">
-                <i class="fa-solid fa-certificate icon"></i>
+                <i class="fa-solid fa-award icon"></i>
                 <h3>The Purity<br> Guarantee</h3></div>
+                <div class="vertical"></div>
                 <div class="guarantee">
-                <i class="fa fa-exchange icon"></i>
+                    <i class="fa-brands fa-stack-exchange icon"></i>
                 <h3>100% Exchange<br> Value</h3></div>
+                <div class="vertical"></div>
                 <div class="guarantee">
-                <i class="fas fa-life-ring icon"></i>
+                    <i class="fa-solid fa-heart-pulse icon"></i>
                 <h3>Lifetime <br>Maintenance</h3>
             </div>
         </div>
         </div>
     </main>
-
-    <section class="detailed-description">
+            <div class="para-details">
         <h2>Detailed Description:</h2>
-        <p>
-            Turn heads with these 22 Karat yellow gold heart Drop Earrings. Their sleek design, adorned with heart motifs.
+        <p class="para">
+            Turn heads with these 22 Karat yellow gold heart Drop Earrings. Their sleek design,adorned with heart motifs.
             Fall in love with these Drop Earrings that elegantly dangle with a cascade of golden hearts.
         </p>
-    </section>
+    </div>
+        
 
-    <section class="related-products">
+    <section class="recommendation">
         <h2>You May Also Like</h2>
-        <div class="product-placeholder">+ Add Products</div>
+        <div class="products">
+            <div class="product">
+                <img src="images/braclet4.jpg" alt="Lotus Serum">
+                <h3>Elite Braclets</h3>
+                <p>$180</p>
+            </div>
+            <div class="product">
+                <img src="images/braclet3.jpg" alt="Honey Eye Cream">
+                <h3>Butterfly Bracelts</h3>
+                <p>$160</p>
+            </div>
+            <div class="product">
+                <img src="images/braclet1.jpg" alt="Chai Mist">
+                <h3>Charming Braclets</h3>
+                <p>$160</p>
+            </div>
+        </div>
     </section>
 
     <script src="javascript/product.js"></script>
