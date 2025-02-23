@@ -11,6 +11,8 @@ header {
   display: flex;
   justify-content: space-between;
   padding: 15px 30px;
+  background: white;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 .logo {
@@ -18,20 +20,75 @@ header {
   font-weight: bold;
 }
 .navigation{
-  display: flex;
+  /* display: flex;
   justify-content: space-around;
-  gap: 10px;
+  gap: 10px; */
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  gap: 35px;
+  height: 100%;
+  color: #000;
 }
-nav ul {
+
+/* nav ul {
   list-style: none;
   display: flex;
   gap: 15px;
+} */
+
+.nav-link{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    flex-grow: 1;
+    display: flex;
 }
 
-nav ul li a {
+/* nav ul li a {
   text-decoration: none;
   color: black;
   font-weight: 500;
+} */
+
+.nav-link li {
+  display: inline;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+.nav-link a {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  padding: 5px 0;
+}
+
+.nav-link a::after {
+  content: "";
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #D63384, #ff85b6);
+  position: absolute;
+  left: 50%;
+  bottom: -5px;
+  transition: width 0.4s ease, left 0.4s ease;
+  border-radius: 2px;
+}
+
+.nav-link a:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+.nav-link a:hover {
+  color: #D63384;
 }
 
 .menu-btn {
@@ -67,6 +124,9 @@ nav ul li a {
   gap: 30px;
   padding: 20px;
   margin: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 .product-images img {
@@ -240,12 +300,26 @@ nav ul li a {
 }
 
 /* Detailed Description */
-.detailed-description {
+/* .detailed-description {
   margin-top: 10px;
   margin-left: 10px;
-}
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+} */
 .para-details{
- margin-left: 10px;
+ padding: 20px;
+ margin: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+.recommendation{
+  margin: 20px;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 .recommendation h2 {
@@ -253,13 +327,56 @@ nav ul li a {
   margin-bottom: 20px;
 }
 
-.products {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
+.direction{
+  text-align: center;
+}
+.direction button{
+  font-family: cursive;
+  font-weight: bold;
+  background-color: #ffffff44;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  transition: 0.5s;
+  margin: 0 10px;
+  cursor: pointer;
+}
+.direction button:hover{
+  background-color: #ffffff;
+}
+.item{
+  overflow: hidden;
+  transition: 0.5s;
+  margin: 10px;
+  scroll-snap-align: start;
 }
 
-.products:hover{
+.item .avatar{
+  display: block;
+  margin: 0 10px;
+  width: 100px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 20px;
+  cursor: pointer;
+}
+#list{
+  display: flex;
+  width: max-content;
+  justify-content: center;
+  align-items: center;
+}
+#formList{
+  width: 1280px;
+  max-width: 100%;
+  overflow: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: both;
+
+}
+
+#formList:hover{
   -webkit-animation: mover 1s infinite alternate;
   animation: mover 1s infinite alternate;
 }
@@ -273,19 +390,8 @@ nav ul li a {
   }
 }
 
-.product {
-  background: #fff;
-  padding: 20px;
-  border-radius: 50px 50px 0 0;
-  width: 200px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin-bottom: 5px;
-}
-
-.product img {
-  width: 100%;
-  border-radius: 50px 50px 0 0;
-  margin-bottom: 10px;
+#formList::-webkit-scrollbar{
+  display: none;
 }
 
 .recommendation h3 {
@@ -299,22 +405,6 @@ nav ul li a {
   font-size: 20px;
   color: #d10a42;
   font-weight: bold;
-}
-
-
-/* Related Products */
-.related-products {
-  padding: 20px;
-}
-
-.related-products .product-placeholder {
-  height: 150px;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: gray;
-  font-size: 18px;
 }
 
 /* Responsive Design */

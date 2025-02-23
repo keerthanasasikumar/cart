@@ -9,13 +9,13 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     />
-    <link href="/your-path-to-uicons/css/uicons-css/styles.css" rel="stylesheet"> 
+    
 </head>
 <body>
     <header>
         <div class="logo">LOGO</div>
-        <nav class="navigation">
-            <ul>
+        <div class="navigation">
+            <ul class="nav-link">
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Products</a></li>
                 <li><a href="#">Reels</a></li>
@@ -23,7 +23,7 @@
                 <li><a href="#">Contact</a></li>
             </ul>
             <button class="menu-btn">+ ADD MENU</button>
-        </nav>
+        </div>
     </header>
 
     <section class="breadcrumb">
@@ -69,36 +69,65 @@
         </div>
         </div>
     </main>
-            <div class="para-details">
+
+            <section class="para-details">
         <h2>Detailed Description:</h2>
-        <p class="para">
+        <p>
             Turn heads with these 22 Karat yellow gold heart Drop Earrings. Their sleek design,adorned with heart motifs.
             Fall in love with these Drop Earrings that elegantly dangle with a cascade of golden hearts.
         </p>
-    </div>
+            </section>
         
 
     <section class="recommendation">
         <h2>You May Also Like</h2>
-        <div class="products">
-            <div class="product">
-                <img src="images/braclet4.jpg" alt="Lotus Serum">
-                <h3>Elite Braclets</h3>
-                <p>$180</p>
+
+    <div id="formList">
+        <div id="list">
+            <div class="item">
+                <img src="images/braclet1.jpg" class="avatar">
             </div>
-            <div class="product">
-                <img src="images/braclet3.jpg" alt="Honey Eye Cream">
-                <h3>Butterfly Bracelts</h3>
-                <p>$160</p>
+            <div class="item">
+                <img src="images/braclet2.jpg" class="avatar">
             </div>
-            <div class="product">
-                <img src="images/braclet1.jpg" alt="Chai Mist">
-                <h3>Charming Braclets</h3>
-                <p>$160</p>
+            <div class="item">
+                <img src="images/braclet3.jpg" class="avatar">
+            </div>
+            <div class="item">
+                <img src="images/braclet4.jpg" class="avatar">
+            </div>
+            <div class="item">
+                <img src="images/braclet1.jpg" class="avatar">
+            </div>
+            <div class="item">
+                <img src="images/braclet2.jpg" class="avatar">
+            </div>
+            <div class="item">
+                <img src="images/earing1.jpg" class="avatar">
+            </div>
+            <div class="item">
+                <img src="images/earing2.jpg" class="avatar">
+            </div>
+            <div class="item">
+                <img src="images/earing3.jpg" class="avatar">
+            </div>
+            <div class="item">
+                <img src="images/earing4.jpg" class="avatar">
+            </div>
+            <div class="item">
+                <img src="images/earing5.jpg" class="avatar">
             </div>
         </div>
+    </div>
+
+          <div class="direction">
+            <button id="prev"><i class="fas fa-chevron-left"></i></button>
+            <button id="next"><i class="fas fa-chevron-right"></i></button>
+          </div>  
+
     </section>
 
     <script src="javascript/product.js"></script>
+
 </body>
 </html>
