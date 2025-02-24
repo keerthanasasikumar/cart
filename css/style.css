@@ -198,7 +198,11 @@ button .remove:hover{
 }
 
 
-@media (max-width: 992px) {  
+@media (max-width: 992px) {
+  
+  body{
+    background-image: url("../images/image.webp");
+  }
   .cart-container {
       flex-direction: column;
       gap: 10px;

@@ -66,6 +66,38 @@ document.getElementById('prev').onclick = function () {
 }
 
 
+document.addEventListener("DOMContentLoaded", function() {
+  const menuToggle = document.getElementById("mobile-menu");
+  const sidebar = document.getElementById("sidebar");
+  const openIcon = document.getElementById("open-icon");
+  const closeIcon = document.getElementById("close-icon");
+
+  menuToggle.addEventListener("click", function() {
+      sidebar.classList.toggle("active"); // Toggle sidebar visibility
+      
+      // Toggle icons (bars <=> close)
+      if (sidebar.classList.contains("active")) {
+          openIcon.style.display = "none";
+          closeIcon.style.display = "block";
+      } else {
+          openIcon.style.display = "block";
+          closeIcon.style.display = "none";
+      }
+  });
+
+  // Close sidebar when clicking outside (for mobile)
+  document.addEventListener("click", function(event) {
+      if (!sidebar.contains(event.target) && !menuToggle.contains(event.target)) {
+          sidebar.classList.remove("active");
+          openIcon.style.display = "block";
+          closeIcon.style.display = "none";
+      }
+  });
+});
+
+
+
+
 
 
 
