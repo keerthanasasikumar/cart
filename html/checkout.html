@@ -1,52 +1,44 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>CheckOut</title>
-        <link rel="stylesheet" href="../css/checkout.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    </head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout Page</title>
+    <link rel="stylesheet" href="../css/checkout.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
-    <body>
+</head>
+<body>
 
     <div class="main">
 
+        <div class="container">
+            <h2>Checkout</h2>
+            <div class="progress-bar">
+                <div class="step active">Personal Info<i class="fa-solid fa-person"></i></div>
+                <div class="step">Address<i class="fa-solid fa-truck"></i></div>
+                <div class="step">Order<i class="fa-solid fa-cart-plus"></i></div>
+            </div>
     
-
-       <div class="image-content">
-
-
-        <div class="content">
-
-            <div class="container">
+            <form id="checkoutForm">
+                <!-- Step 1: Personal Information -->
+                <div class="form-step active">
+                    <h3>Personal Information</h3>
+                    <label>First Name</label>
+                    <input type="text" id="firstName" required>
     
+                    <label>Last Name</label>
+                    <input type="text" id="lastName" required>
     
-                <stepper class="progress-bar">
-                    <div class="step active">Personal Information<i class="fa-solid fa-person"></i></div>
-                    <div class="step">Address<i class="fa-solid fa-truck"></i></div>
-                    <div class="step">Order<i class="fa-solid fa-cart-plus"></i></div>
-                </stepper>
+                    <label>Email</label>
+                    <input type="email" id="email" required>
     
-                
-                <div class="form-container">
-                    <form id="multiStepForm">
-                        
-                        <div class="form-step active">
-                            <h2>Personal Information</h2>
-                            <label>First Name</label>
-                            <input type="text" id="firstname" required>
-                            
-                            <label>Last Name</label>
-                            <input type="text" id="lastname" required>
-                            
-                            <label>Email</label>
-                            <input type="email" id="email" required>
+                    <label>Phone Number</label>
+                    <input type="tel" id="phone" required>
     
-                            <label>Phone Number</label>
-                            <input type="tel" id="phone" required>
-    
-                            
+                    <div class="buttons">
                         <div class="styled-wrapper">
-                            <button class="button" type="button" id="nextBtn">
+                            <button class="button" type="button" id="next-btn">
                             <div class="button-box">
                                 <span class="button-elem"> Next
                                     <i class="fa-solid fa-arrow-right"></i>
@@ -54,103 +46,99 @@
                             </div>
                             </button>
                         </div>
-                
-                        </div>
     
-                        
-                        <div class="form-step">
-                            <h2>Delivery Address</h2>
-                            <label>Address</label>
-                            <input type="text" id="address" required>
-    
-                            <label>City</label>
-                            <input type="text" id="city" required>
-    
-                            <label>State</label>
-                            <select id="state" required>
-                                <option value="">Select State</option>
-                                <option value="Tamil Nadu">Tamil Nadu</option>
-                                <option value="Kerala">Kerala</option>
-                                <option value="Karnataka">Karnataka</option>
-                            </select>
-    
-                            <label>Zipcode</label>
-                            <input type="text" id="zipcode" required>
-    
-                           
-                            <div class="buttons">
-                            <div class="styled-wrapper">
-                                <button class="prev-btn" type="button" id="nextBtn">
-                                <div class="button-box">
-                                    <span class="button-elem">
-                                        Back
-                                        <i class="fa-solid fa-arrow-left"></i>
-                                    </span>
-                                </div>
-                                </button>
-                            </div>
-                           
-                            <div class="styled-wrapper">
-                                <button class="button" type="button" id="nextBtn">
-                                <div class="button-box">
-                                    <span class="button-elem">
-                                        Next
-                                        <i class="fa-solid fa-arrow-right"></i>
-                                    </span>
-                                </div>
-                                </button>
-                            </div>
-                        </div>
-    
-                        </div>
-    
-                        
-                        <div class="form-step">
-                            <h2>Order Details</h2>
-                            <label>Description</label>
-                            <textarea id="description" required></textarea>
-    
-                            <label>Payment Status</label>
-                            <select id="payment" required>
-                                <option value="">Select Payment Method</option>
-                                <option value="UPI">UPI</option>
-                                <option value="Cash on Delivery">Cash on Delivery</option>
-                            </select>
-    
-    
-                             <div class="buttons">
-                            <div class="styled-wrapper">
-                                <button class="prev-btn" type="button" id="nextBtn">
-                                <div class="button-box">
-                                    <span class="button-elem">
-                                        Back
-                                        <i class="fa-solid fa-arrow-left"></i>
-                                    </span>
-                                </div>
-                                </button>
-                            </div>
-    
-                            <button type="submit"class="button-submit"><span>Submit</span></button>
-                        </div>
-                        </div>
-                    </form>
-    
-    
+                    </div>
                 </div>
-            </div>
     
+                <!-- Step 2: Address -->
+                <div class="form-step">
+                    <h3>Address</h3>
+                    <label>Address</label>
+                    <input type="text" id="address" required>
+    
+                    <label>City</label>
+                    <input type="text" id="city" required>
+    
+                    <label>State</label>
+                    <select id="state" required>
+                        <option value="">Select State</option>
+                        <option value="CA">Karnataka
+                        </option>
+                        <option value="NY">Kerala</option>
+                        <option value="TX">Tamil Nadu</option>
+                    </select>
+    
+                    <label>Zipcode</label>
+                    <input type="text" id="zipcode" required>
+    
+                    <div class="buttons">
+                        <div class="styled-wrapper">
+                            <button class="prev-btn" type="button" id="next-btn">
+                            <div class="button-box">
+                                <span class="button-elem">
+                                    Back
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </span>
+                            </div>
+                            </button>
+                        </div>
+    
+                        <div class="styled-wrapper">
+                            <button class="button" type="button" id="next-btn">
+                            <div class="button-box">
+                                <span class="button-elem">
+                                    Next
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </span>
+                            </div>
+                            </button>
+                        </div>
+    
+                    </div>
+                </div>
+    
+                <!-- Step 3: Order -->
+                <div class="form-step">
+                    <h3>Order</h3>
+                    <label>Description</label>
+                    <input type="text" id="description" required>
+    
+                    <label>Status (Select Payment)</label>
+                    <select id="payment-status" required>
+                        <option value="">Select Payment Method</option>
+                        <option value="Credit Card">Credit Card</option>
+                        <option value="PayPal">PayPal</option>
+                        <option value="Cash on Delivery">Cash on Delivery</option>
+                    </select>
+    
+                    <div class="buttons">
+    
+                        <div class="styled-wrapper">
+                            <button class="prev-btn" type="button" id="next-btn">
+                            <div class="button-box">
+                                <span class="button-elem">
+                                    Back
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </span>
+                            </div>
+                            </button>
+                        </div>
+    
+                        <button type="submit"class="button-submit"><span>Submit</span></button>
+    
+                    </div>
+                </div>
+            </form>
+    
+            <div id="successMessage" class="hidden">
+                <h2>Order Placed Successfully!</h2>
+            </div>
         </div>
-
-
-       </div>
 
 
 
     </div>
 
-    
     <script src="../javascript/checkout.js"></script>
-
-    </body>
-
+</body>
 </html>

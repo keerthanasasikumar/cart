@@ -3,7 +3,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background:#fff8f1;
+  background-color:white;
 }
 
 
@@ -16,7 +16,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  background-color: #fff;
+  background-color:white;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -189,9 +189,6 @@ border: 1px solid rgba( 255, 255, 255, 0.18 ) ;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
-.product-images img {
- 
-}
 #main-img{
   width: 22rem;
   height: 350px;
@@ -200,7 +197,7 @@ border: 1px solid rgba( 255, 255, 255, 0.18 ) ;
 }
 .thumbnail-container {
   display: flex;
-  gap: 20px;
+  gap: 19px;
   margin-top: 10px;
 }
 .thumbnail-container img{

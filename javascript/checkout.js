@@ -1,66 +1,62 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const steps = document.querySelectorAll(".form-step");
-  const stepIndicators = document.querySelectorAll(".step");
-  const nextBtns = document.querySelectorAll(".button");
-  const prevBtns = document.querySelectorAll(".prev-btn");
-  const form = document.getElementById("multiStepForm");
-  let currentStep = 0;
+document.addEventListener("DOMContentLoaded", () => {
+    const steps = document.querySelectorAll(".form-step");
+    const nextButtons = document.querySelectorAll(".button");
+    const prevButtons = document.querySelectorAll(".prev-btn");
+    const stepsIndicator = document.querySelectorAll(".step");
+    const form = document.getElementById("checkoutForm");
+    const successMessage = document.getElementById("successMessage");
 
-  function showStep(step) {
-      steps.forEach((s, index) => {
-          s.classList.toggle("active", index === step);
-      });
+    let currentStep = 0;
 
-      stepIndicators.forEach((s, index) => {
-          s.classList.toggle("active", index === step);
-      });
-  }
+    function showStep(step) {
+        steps.forEach((s, index) => {
+            s.classList.toggle("active", index === step);
+        });
 
-  function validateStep(step) {
-      let inputs = steps[step].querySelectorAll("input, select, textarea");
-      let valid = true;
+        stepsIndicator.forEach((indicator, index) => {
+            indicator.classList.toggle("active", index <= step);
+        });
+    }
 
-      inputs.forEach(input => {
-          if (!input.value.trim()) {
-              input.style.border = "2px solid red";
-              valid = false;
-          } else {
-              input.style.border = "1px solid #ddd";
-          }
-      });
+    nextButtons.forEach((button, index) => {
+        button.addEventListener("click", () => {
+            if (validateForm(steps[index])) {
+                currentStep++;
+                showStep(currentStep);
+            }
+        });
+    });
 
-      return valid;
-  }
+    prevButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            currentStep--;
+            showStep(currentStep);
+        });
+    });
 
-  nextBtns.forEach(btn => {
-      btn.addEventListener("click", () => {
-          if (validateStep(currentStep)) {
-              if (currentStep < steps.length - 1) {
-                  currentStep++;
-                  showStep(currentStep);
-              }
-          }
-      });
-  });
+    form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        if (validateForm(steps[currentStep])) {
+            form.style.display = "none";
+            successMessage.classList.remove("hidden");
+            window.location.href = "../html/success.html";
 
-  prevBtns.forEach(btn => {
-      btn.addEventListener("click", () => {
-          if (currentStep > 0) {
-              currentStep--;
-              showStep(currentStep);
-          }
-      });
-  });
+        }
+    });
 
-  form.addEventListener("submit", (e) => {
-      e.preventDefault(); // Prevent actual form submission
+    function validateForm(step) {
+        let inputs = step.querySelectorAll("input, select");
+        let valid = true;
 
-      if (validateStep(currentStep)) {
-          console.log("Form submitted successfully! Redirecting...");
+        inputs.forEach(input => {
+            if (!input.value) {
+                input.style.border = "1px solid red";
+                valid = false;
+            } else {
+                input.style.border = "1px solid #ccc";
+            }
+        });
 
-          window.location.href = "../html/success.html";
-      }
-  });
-
-  showStep(currentStep);
+        return valid;
+    }
 });
