@@ -48,10 +48,16 @@ h2 {
   text-align: center;
   margin-bottom: 10px;
 }
+.small-icon {
+  width: 30px;
+  height: 30px;
+  margin-top: 10px;
+}
 
 .progress-bar {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  align-items: center;
   margin-bottom: 10px;
 
 }
@@ -59,14 +65,14 @@ h2 {
 .step {
 
 
-   flex: 1;
+  flex: 1;
   text-align: center;
   padding: 10px;
-  font-size: 14px;
+  font-size: 18px;
   font-weight: bold;
   color: black;
   background: white;
-  padding: 15px;
+  padding: 10px;
   border-radius: 35px 35px 35px 0;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   width: 100%;

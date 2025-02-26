@@ -3,17 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jewelry Product Page</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <title>All Products</title>
+    <link rel="stylesheet" href="css/index.css">
     <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-    />
-    
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+  />
 </head>
 <body>
 
-<header>
+  <header>
     <div class="logo">LOGO</div>
     
     <!-- Menu Toggle (Hamburger and Close Icon) -->
@@ -35,108 +34,35 @@
     </nav>
 </header>
 
-    <section class="breadcrumb">
-        <a href="#">Home</a> > <a href="#">Product</a> > <span>Dazzling Heart Gold</span>
+
+
+    <section class="search-section">
+      <div class="breadcrumb">
+        <span>Home &gt; All Products</span>
+    </div>
+       <div class="search-head">
+        <h1>All Products <span>(500 Results)</span></h1>
+       </div>
+        <div class="search-bar">
+            <input type="text" id="search" placeholder="What Are You Looking For?">
+            <button onclick="searchProducts()">Search</button>
+        </div>
     </section>
 
-    <main class="product-container">
-        <div class="product-images">
-            <img id="main-img" src="images/earing1.jpg" alt="Gold Earrings">
-            <div class="thumbnail-container">
-                <img class="thumbnail" src="images/earing2.jpg" alt="Thumbnail 1">
-                <img class="thumbnail" src="images/earing3.jpg" alt="Thumbnail 2">
-                <img class="thumbnail" src="images/earing4.jpg" alt="Thumbnail 3">
-                <img class="thumbnail" src="images/earing5.jpg" alt="Thumbnail 4">
-            </div>
-        </div>
-
-        <div class="product-info">
-            <h2>Dazzling Hearts Gold Drop Earrings</h2>
-            <p class="description">
-                Turn heads with these 22 Karat yellow gold heart Drop Earrings. Their sleek design, adorned with heart motifs.
-            </p><hr>
-            <p class="price"><span class="old-price">$400</span> <span class="new-price" style="position: absolute;">$250</span></p><br>
-            <p class="rating">⭐ ⭐ ⭐ ⭐ ⭐ 4.7 Reviews</p>
-            <div class="buttons">
-                <button class="buy-btn" onclick="buyNow()">Buy Now</button>
-                <button class="cart-btn" onclick="buyNow()">Add to Cart</button>
-            </div>
-            
-            <div class="box">
-            <div class="guarantee">
-                <i class="fa-solid fa-award icon"></i>
-                <h3>The Purity<br> Guarantee</h3></div>
-                <div class="vertical"></div>
-                <div class="guarantee">
-                    <i class="fa-brands fa-stack-exchange icon"></i>
-                <h3>100% Exchange<br> Value</h3></div>
-                <div class="vertical"></div>
-                <div class="guarantee">
-                    <i class="fa-solid fa-heart-pulse icon"></i>
-                <h3>Lifetime <br>Maintenance</h3>
-            </div>
-        </div>
-        </div>
-    </main>
-
-            <section class="para-details">
-        <h2>Detailed Description:</h2>
-        <p>
-            Turn heads with these 22 Karat yellow gold heart Drop Earrings. Their sleek design,adorned with heart motifs.
-            Fall in love with these Drop Earrings that elegantly dangle with a cascade of golden hearts.
-        </p>
-            </section>
-        
-
-    <section class="recommendation">
-        <h2>You May Also Like</h2>
-
-    <div id="formList">
-        <div id="list">
-            <div class="item">
-                <img src="images/braclet1.jpg" class="avatar">
-            </div>
-            <div class="item">
-                <img src="images/braclet2.jpg" class="avatar">
-            </div>
-            <div class="item">
-                <img src="images/braclet3.jpg" class="avatar">
-            </div>
-            <div class="item">
-                <img src="images/braclet4.jpg" class="avatar">
-            </div>
-            <div class="item">
-                <img src="images/braclet1.jpg" class="avatar">
-            </div>
-            <div class="item">
-                <img src="images/braclet2.jpg" class="avatar">
-            </div>
-            <div class="item">
-                <img src="images/earing1.jpg" class="avatar">
-            </div>
-            <div class="item">
-                <img src="images/earing2.jpg" class="avatar">
-            </div>
-            <div class="item">
-                <img src="images/earing3.jpg" class="avatar">
-            </div>
-            <div class="item">
-                <img src="images/earing4.jpg" class="avatar">
-            </div>
-            <div class="item">
-                <img src="images/earing5.jpg" class="avatar">
-            </div>
-        </div>
+    <div class="filter-sort">
+        <button class="filter-btn">Filter</button>
+        <select id="sort" onchange="sortProducts()">
+            <option value="high-to-low">Sort By: High To Low</option>
+            <option value="low-to-high">Sort By: Low To High</option>
+        </select>
     </div>
 
-          <div class="direction">
-            <button id="prev"><i class="fas fa-chevron-left"></i></button>
-            <button id="next"><i class="fas fa-chevron-right"></i></button>
-          </div>  
-
+    <section class="products-container" id="products-container">
+        <!-- Products will be dynamically loaded here -->
     </section>
 
-    <script src="javascript/product.js"></script>
+    <button class="load-more" onclick="loadMoreProducts()">Load More</button>
 
+    <script src="javascript/index.js"></script>
 </body>
 </html>
