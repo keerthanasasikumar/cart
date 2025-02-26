@@ -8,9 +8,14 @@ body {
 
 
 .logo {
-  font-size: 20px;
-  font-weight: bold;
+  display: flex;
+  animation: fadeIn 1s ease-in-out;
 }
+.logo img{
+  width: 90px;
+  height: 90px;
+}
+
 header {
   display: flex;
   justify-content: space-between;
