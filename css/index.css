@@ -15,11 +15,13 @@ body {
 .logo {
   display: flex;
   animation: fadeIn 1s ease-in-out;
+  
 }
 .logo img{
   width: 90px;
   height: 90px;
 }
+
 header {
   display: flex;
   justify-content: space-between;
@@ -46,8 +48,6 @@ header {
   display: flex;
   align-items: center;
   position: relative;
-  display: flex;
-  align-items: center;
   justify-content: space-between;
   text-align: center;
   gap: 35px;
@@ -120,18 +120,6 @@ left: 0;
 color: #D63384;
 }
 
-.menu-btn {
-background: #ddd;
-border: 1px solid rgba( 255, 255, 255, 0.18 ) ;
-padding: 5px 8px;
-cursor: pointer;
-border-radius: 10px;
-}
-
-.menu-btn:hover{
-box-shadow: 0 8px 32px 0 #ff9bd9;
-border: 1px solid rgba( 255, 255, 255, 0.18 ) ;
-}
 
 .menu-toggle {
   display: none;
@@ -153,6 +141,7 @@ border: 1px solid rgba( 255, 255, 255, 0.18 ) ;
 
 
 @media screen and (max-width: 768px) {
+
   .menu-toggle {
       display: block; 
       left: 320px;
@@ -172,9 +161,12 @@ border: 1px solid rgba( 255, 255, 255, 0.18 ) ;
       z-index: 999;
   }
 
+
   .navigation.active {
       right: 0;
   }
+
+  
 
   .navigation ul {
       flex-direction: column;
@@ -194,6 +186,7 @@ border: 1px solid rgba( 255, 255, 255, 0.18 ) ;
     display: flex;
     margin-left:50%;
   }
+
 
 }
 

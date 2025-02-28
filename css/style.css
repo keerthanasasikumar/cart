@@ -206,8 +206,13 @@ button .remove:hover{
   }
 
   .cart-table, .cart-summary {
-      width: 100%;
+      width: 95%;
   }
+
+  .cart-table{
+    padding: 20px;
+  }
+
   .quantity{
     text-align: center;
     border: none;

@@ -10,6 +10,7 @@ body {
 .logo {
   display: flex;
   animation: fadeIn 1s ease-in-out;
+  justify-content: flex-start;
 }
 .logo img{
   width: 90px;
@@ -42,13 +43,24 @@ header {
   display: flex;
   align-items: center;
   position: relative;
-  display: flex;
-  align-items: center;
   justify-content: space-between;
   text-align: center;
   gap: 35px;
   height: 100%;
   color: #000;
+}
+
+.navigation.active {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 250px;
+  height: 100vh;
+  background-color: white;
+  box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.2);
+  flex-direction: column;
+  padding: 20px;
+  animation: slideIn 0.5s ease-in-out;
 }
 
 .nav-link{
@@ -103,17 +115,7 @@ left: 0;
 color: #D63384;
 }
 
-.menu-btn {
-background: #ddd;
-border: 1px solid rgba( 255, 255, 255, 0.18 ) ;
-padding: 5px 8px;
-cursor: pointer;
-border-radius: 10px;
-}
-.menu-btn:hover{
-box-shadow: 0 8px 32px 0 #ff9bd9;
-border: 1px solid rgba( 255, 255, 255, 0.18 ) ;
-}
+
 
 .menu-toggle {
   display: none;
@@ -186,9 +188,9 @@ border: 1px solid rgba( 255, 255, 255, 0.18 ) ;
 
 .product-container {
   display: flex;
-  gap: 30px;
+  gap: 10px;
   padding: 20px;
-  margin: 10px;
+  margin: 5px;
   background: white;
   border-radius: 10px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -236,6 +238,7 @@ border: 1px solid rgba( 255, 255, 255, 0.18 ) ;
   margin-bottom: 10px;
   margin-left: 10px;
 }
+
 
 .price {
   font-size: 22px;
@@ -291,6 +294,7 @@ border: 1px solid rgba( 255, 255, 255, 0.18 ) ;
   cursor: pointer;
   font-size: 16px;
   border-radius: 10px;
+  
 }
 
 .buy-btn {
@@ -340,39 +344,47 @@ border: 1px solid rgba( 255, 255, 255, 0.18 ) ;
   box-shadow: 0 0 5px #d10a42,0 0 5px #d10a42,0 0 15px #d10a42,0 0 25px #d10a42;
 }
 
-.box{
+.box1 h1{
+  font-size: 24px;
+  margin-left: 30px;
+}
+.social-media h2{
+  font-size: 24px;
+  margin-left: 30px;
+}
+
+.social-media i{
+  margin-left: 40px;
+  font-size: 20px;
+}
+
+.media{
   display: flex;
-  border: 1px solid grey;
-  border-radius: 10px;
-  margin-top: 5px;
-  margin-left: 10px;
-  align-items: center;
-  justify-content: space-around;
-  width: 600px;
-}
-.guarantee{
-  margin-top: 20px;
-}
-.vertical{
-  border-left: 2px solid black;
-  height: 150px;
-}
-.guarantee .icon{
-  font-size: 35px;
-  align-items: center;
 }
 
-.small-icon{
-  width: 50px;
-  height: 50px;
+.social-media .fa-brands{
+  color:black;
 }
 
+.share-btn i:hover{
+  color: green;
+}
+
+.share-btn .fa-instagram:hover{
+  color: rgb(252,175, 69);
+}
 
 .para-details{
  padding: 20px;
 }
+
+.para-details p{
+  margin-left: 10%;
+}
+
 .recommendation{
   margin: 20px;
+  margin-top: 5%;
   padding: 20px;
   background: white;
   border-radius: 10px;
@@ -417,6 +429,12 @@ border: 1px solid rgba( 255, 255, 255, 0.18 ) ;
   object-fit: cover;
   border-radius: 20px;
   cursor: pointer;
+}
+
+.item h1{
+  font-size: 16px;
+  font-weight: bold;
+  margin-left: 20px;
 }
 #list{
   display: flex;
@@ -590,10 +608,18 @@ text-align: center;
     text-align: center;
 }
 
+
+
   .nav-link {
     flex-direction: column;
     gap: 10px;
   }
+  .media{
+    display: flex;
+    margin-left: 30%;
+  }
+
+
 
   .old-price{
     left: 39%;
