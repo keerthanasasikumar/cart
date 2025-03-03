@@ -1,4 +1,11 @@
 General Styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -15,6 +22,7 @@ body {
 .logo img{
   width: 90px;
   height: 90px;
+  border-radius: 100px;
 }
 
 header {
@@ -24,6 +32,7 @@ header {
   padding: 10px 20px;
   background-color:white;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  
 }
 
 .menu-toggle {
@@ -32,6 +41,7 @@ header {
   display: none;
   z-index: 1001;
   right: 0;
+ 
 }
 
 #close-icon {
@@ -124,51 +134,17 @@ color: #D63384;
   gap: 5px;
 }
 
-
-@media screen and (max-width: 768px) {
-  .menu-toggle {
-      display: block; 
-      left: 320px;
+@keyframes slideIn {
+  from {
+    right: -320px;
+    opacity: 0;
   }
-
-  .navigation {
-      position: fixed;
-      top: 0;
-      right: -320px; 
-      width: 250px;
-      height: 100vh;
-      background-color: white;
-      box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.2);
-      flex-direction: column;
-      padding: 20px;
-      transition: 0.3s ease-in-out;
-      z-index: 999;
+  to {
+    right: 0;
+    opacity: 1;
   }
-
-  .navigation.active {
-      right: 0;
-  }
-
-  .navigation ul {
-      flex-direction: column;
-      width: 100%;
-  }
-
-  .navigation ul li {
-      padding: 15px 0;
-      border-bottom: 1px solid #ddd;
-  }
-
-  .navigation ul li a {
-      font-size: 18px;
-  }
-
-  .menu-toggle {
-    display: flex;
-    margin-left: 100%;
-  }
-
 }
+
 
 
 .breadcrumb {
@@ -553,7 +529,59 @@ text-align: center;
   }
 } */
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 768px) {
+  header{
+    display: flex;
+  }
+  .menu-toggle {
+    display: block; 
+    left: 320px;
+}
+
+.navigation {
+    position: fixed;
+    top: 0;
+    right: -320px; 
+    width: 250px;
+    height: 100vh;
+    background-color: white;
+    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.2);
+    flex-direction: column;
+    padding: 20px;
+    transition: 0.3s ease-in-out;
+    z-index: 999;
+}
+
+
+.navigation.active {
+    right: 0;
+}
+
+
+
+.navigation ul {
+    flex-direction: column;
+    width: 100%;
+}
+
+.navigation ul li {
+    padding: 15px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.navigation ul li a {
+    font-size: 18px;
+}
+
+.menu-toggle {
+  display: flex;
+  margin-left:100%;
+}
+  .logo img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+  }
   .breadcrumb {
     flex-direction: row;
   }

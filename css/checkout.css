@@ -354,8 +354,9 @@ button:hover {
   }
 
   .progress-bar {
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
+    gap: 10px;
   }
 
   .step {
