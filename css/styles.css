@@ -314,10 +314,10 @@ color: #D63384;
 
 .buy-btn:hover,.buy-btn:focus{
   color: #ffffff;
-  background: #d10a42;
-  border: 1px solid #d10a42;
-  text-shadow: 0 0 5px #ffffff,0 0 10px #ffffff,0 0 20px #ffffff;
-  box-shadow: 0 0 5px #d10a42,0 0 5px #d10a42,0 0 15px #d10a42,0 0 25px #d10a42;
+  background: #f86a92;
+  border: 1px solid #f86a92;
+  text-shadow: 0 0 2px #ffffff,0 0 5px #ffffff,0 0 10px #ffffff;
+  box-shadow: 0 0 1px #f86a92,0 0 1px #f86a92,0 0 5px #f86a92,0 0 5px #f86a92;
 }
 
 .box1 h1{
@@ -592,7 +592,7 @@ text-align: center;
   }
 
   .buttons {
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
   }
 
@@ -668,7 +668,7 @@ text-align: center;
   }
 
   .buttons {
-    flex-direction: column;
+    flex-direction: row;
   }
 
   .box {

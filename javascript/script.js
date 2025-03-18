@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
     const updateCart = () => {
-        let subtotal = 0;
+        let subtotal = 1;
         document.querySelectorAll(".cart-item").forEach(item => {
-            let price = parseFloat(item.querySelector(".price").innerText.replace("$", ""));
+            let price = parseFloat(item.querySelector(".price").innerText.replace("₹", ""));
             let quantity = parseInt(item.querySelector(".quantity").value);
             let subTotal = price * quantity;
             item.querySelector(".subtotal").innerText = `$${subTotal.toFixed(2)}`;

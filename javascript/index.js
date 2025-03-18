@@ -72,67 +72,99 @@
 
 
 
-const productsContainer = document.getElementById("products-container");
-const searchInput = document.getElementById("search");
-const products = [
-    { name: "Earings", price: 50, old:100, img: "images/earing1.jpg" },
-    { name: "Bracelets", price: 100,old:120,  img: "images/braclet1.jpg" },
-    { name: "Necklaces", price: 75,old:100,  img: "images/necklace.jpg" },
-    { name: "Earings", price: 200, old:300, img: "images/earing5.jpg" },
-    { name: " Bracelets", price: 200,old:300,  img: "images/braclet4.jpg" },
-    { name: "Necklaces", price: 120,old:150,  img: "images/necklace1.jpg" },
-    { name: "Earings", price: 95,old:150,  img: "images/earing3.jpg" },
-    { name: "Braclets", price: 150,old:200,  img: "images/braclet3.jpg" },
-    { name: "Earings", price: 95,old:150,  img: "images/earing4.jpg" },
-    { name: "Braclets", price: 150, old:200, img: "images/braclet1.jpg" },
-];
+// const productsContainer = document.getElementById("products-container");
+// const searchInput = document.getElementById("search");
+// const products = [
+//     { name: "Earings", price: 50, old:100, img: "images/earing1.jpg" },
+//     { name: "Bracelets", price: 100,old:120,  img: "images/braclet1.jpg" },
+//     { name: "Necklaces", price: 75,old:100,  img: "images/necklace.jpg" },
+//     { name: "Earings", price: 200, old:300, img: "images/earing5.jpg" },
+//     { name: " Bracelets", price: 200,old:300,  img: "images/braclet4.jpg" },
+//     { name: "Necklaces", price: 120,old:150,  img: "images/necklace1.jpg" },
+//     { name: "Earings", price: 95,old:150,  img: "images/earing3.jpg" },
+//     { name: "Braclets", price: 150,old:200,  img: "images/braclet3.jpg" },
+//     { name: "Earings", price: 95,old:150,  img: "images/earing4.jpg" },
+//     { name: "Braclets", price: 150, old:200, img: "images/braclet1.jpg" },
+// ];
 
-function loadProducts() {
-    productsContainer.innerHTML = "";
-    products.forEach(product => {
-        let productDiv = document.createElement("div");
-        productDiv.classList.add("product");
-        productDiv.innerHTML = `<img src="${product.img}" alt="${product.name}">
-                                <h3>${product.name}</h3>
-                                <p class="old">${product.old}</p> <p class="price">${product.price}</p>`;
-        productDiv.addEventListener("click", function () {
-            window.location.href = `products.html?name=${encodeURIComponent(product.name)}&price=${product.price}&img=${encodeURIComponent(product.img)}`;
-        });
-        productsContainer.appendChild(productDiv);
-    });
-}
+// function loadProducts() {
+//     productsContainer.innerHTML = "";
+//     products.forEach(product => {
+//         let productDiv = document.createElement("div");
+//         productDiv.classList.add("product");
+//         productDiv.innerHTML = `<img src="${product.img}" alt="${product.name}">
+//                                 <h3>${product.name}</h3>
+//                                 <p class="old">${product.old}</p> <p class="price">${product.price}</p>`;
+//         productDiv.addEventListener("click", function () {
+//             window.location.href = `products.html?name=${encodeURIComponent(product.name)}&price=${product.price}&img=${encodeURIComponent(product.img)}`;
+//         });
+//         productsContainer.appendChild(productDiv);
+//     });
+// }
+
+// function searchProducts() {
+//     let query = searchInput.value.toLowerCase();
+//     let filteredProducts = products.filter(product => product.name.toLowerCase().includes(query));
+
+//     productsContainer.innerHTML = "";
+//     filteredProducts.forEach(product => {
+//         let productDiv = document.createElement("div");
+//         productDiv.classList.add("product");
+//         productDiv.innerHTML = `<img src="${product.img}" alt="${product.name}">
+//                                 <h3>${product.name}</h3>
+//                                 <p>Price: $${product.price}</p>`;
+//         productDiv.addEventListener("click", function () {
+//             window.location.href = `products.html?name=${encodeURIComponent(product.name)}&price=${product.price}&img=${encodeURIComponent(product.img)}`;
+//         });
+//         productsContainer.appendChild(productDiv);
+//     });
+// }
+
+// function sortProducts() {
+//     let sortValue = document.getElementById("sort").value;
+//     if (sortValue === "high-to-low") {
+//         products.sort((a, b) => b.price - a.price);
+//     } else {
+//         products.sort((a, b) => a.price - b.price);
+//     }
+//     loadProducts();
+// }
+
+// document.addEventListener("DOMContentLoaded", function () {
+//     loadProducts();
+// });
+
+
+
+const searchInput = document.getElementById("search");
+const productsContainer = document.getElementById("products-container");
 
 function searchProducts() {
     let query = searchInput.value.toLowerCase();
-    let filteredProducts = products.filter(product => product.name.toLowerCase().includes(query));
+    let productDivs = document.querySelectorAll(".product-card");
 
-    productsContainer.innerHTML = "";
-    filteredProducts.forEach(product => {
-        let productDiv = document.createElement("div");
-        productDiv.classList.add("product");
-        productDiv.innerHTML = `<img src="${product.img}" alt="${product.name}">
-                                <h3>${product.name}</h3>
-                                <p>Price: $${product.price}</p>`;
-        productDiv.addEventListener("click", function () {
-            window.location.href = `products.html?name=${encodeURIComponent(product.name)}&price=${product.price}&img=${encodeURIComponent(product.img)}`;
-        });
-        productsContainer.appendChild(productDiv);
+    productDivs.forEach(product => {
+        let name = product.querySelector("h3").innerText.toLowerCase();
+        if (name.includes(query)) {
+            product.style.display = "block";
+        } else {
+            product.style.display = "none";
+        }
     });
 }
 
 function sortProducts() {
     let sortValue = document.getElementById("sort").value;
-    if (sortValue === "high-to-low") {
-        products.sort((a, b) => b.price - a.price);
-    } else {
-        products.sort((a, b) => a.price - b.price);
-    }
-    loadProducts();
-}
+    let productDivs = Array.from(document.querySelectorAll(".product-card"));
 
-document.addEventListener("DOMContentLoaded", function () {
-    loadProducts();
-});
+    productDivs.sort((a, b) => {
+        let priceA = parseFloat(a.querySelector(".price").innerText.replace(/[^0-9.]/g, ""));
+        let priceB = parseFloat(b.querySelector(".price").innerText.replace(/[^0-9.]/g, ""));
+        return sortValue === "high-to-low" ? priceB - priceA : priceA - priceB;
+    });
+
+    productDivs.forEach(product => productsContainer.appendChild(product));
+}
 
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -170,17 +202,21 @@ document.addEventListener("DOMContentLoaded", function () {
     const nextBtn = document.getElementById("next");
     const prevBtn = document.getElementById("prev");
 
-    nextBtn.onclick = function () {
-        productsContainer.scrollBy({
-            left: 300,
-            behavior: "smooth"
+    if (nextBtn && prevBtn && productsContainer) {
+        nextBtn.addEventListener("click", function () {
+            productsContainer.scrollBy({
+                left: productsContainer.clientWidth, 
+                behavior: "smooth"
+            });
         });
-    };
 
-    prevBtn.onclick = function () {
-        productsContainer.scrollBy({
-            left: -300, 
-            behavior: "smooth"
+        prevBtn.addEventListener("click", function () {
+            productsContainer.scrollBy({
+                left: -productsContainer.clientWidth, 
+                behavior: "smooth"
+            });
         });
-    };
+    }
 });
+
+
